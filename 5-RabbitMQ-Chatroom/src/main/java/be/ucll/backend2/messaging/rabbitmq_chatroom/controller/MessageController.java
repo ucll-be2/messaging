@@ -10,7 +10,7 @@ import reactor.core.publisher.Flux;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/message")
+@RequestMapping("/api/v1/messages")
 public class MessageController {
 
     private final MessageService messageService;
@@ -24,7 +24,7 @@ public class MessageController {
         return messageService.getAllMessages();
     }
 
-    @GetMapping(value = "/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @GetMapping(params = {"stream"}, produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<ServerSentEvent<Message>> streamMessages() {
         return messageService.subscribe()
                 .map(message ->

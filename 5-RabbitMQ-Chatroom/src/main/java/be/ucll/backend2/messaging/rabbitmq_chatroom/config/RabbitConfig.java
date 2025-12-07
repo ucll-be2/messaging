@@ -3,6 +3,7 @@ package be.ucll.backend2.messaging.rabbitmq_chatroom.config;
 import org.springframework.amqp.core.Exchange;
 import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -21,7 +22,7 @@ public class RabbitConfig {
     // Register Jackson2JsonMessageConverter bean so that our messages are converted
     // to/from JSON using Jackson
     @Bean
-    public Jackson2JsonMessageConverter messageConverter() {
+    public MessageConverter messageConverter() {
         return new Jackson2JsonMessageConverter();
     }
 

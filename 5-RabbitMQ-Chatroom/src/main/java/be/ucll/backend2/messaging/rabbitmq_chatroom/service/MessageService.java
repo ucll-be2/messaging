@@ -24,7 +24,8 @@ public class MessageService {
     private final MessageRepository messageRepository;
     private final RabbitTemplate rabbitTemplate;
 
-    public MessageService(MessageRepository messageRepository, RabbitTemplate rabbitTemplate) {
+    public MessageService(MessageRepository messageRepository,
+                          RabbitTemplate rabbitTemplate) {
         this.messageRepository = messageRepository;
         this.rabbitTemplate = rabbitTemplate;
     }
