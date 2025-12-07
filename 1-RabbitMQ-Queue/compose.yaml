@@ -1,8 +1,12 @@
 services:
   rabbitmq:
+    # Gebruik de volgende image voor management UI
+    # image: 'rabbitmq:4-management'
     image: 'rabbitmq:4'
     environment:
       RABBITMQ_DEFAULT_USER: myuser
       RABBITMQ_DEFAULT_PASS: secret
     ports:
       - '5672:5672'
+      # Voor management UI op poort 15672:
+      # - '15672:15672'
