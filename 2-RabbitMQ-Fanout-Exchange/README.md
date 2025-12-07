@@ -14,10 +14,10 @@ worden. Messages worden enkel gestuurd naar receiver die op dat moment aan het
 "luisteren" zijn.
 
 - [Message.java](src/main/java/be/ucll/backend2/messaging/queue/Message.java): een
-  record met het bericht dat gestuurd wordt.
-- [Sender.java](src/main/java/be/ucll/backend2/messaging/queue/Sender.java): de sender: deze stuurt in een oneindige lus messages naar de exchange met behulp van `RabbitMQTemplate`. zijn.
+  `record` met het bericht dat gestuurd wordt.
+- [Sender.java](src/main/java/be/ucll/backend2/messaging/queue/Sender.java): de sender: deze stuurt elke seconde een message naar de exchange met behulp van `RabbitMQTemplate`.
 - [Receiver.java](src/main/java/be/ucll/backend2/messaging/queue/Receiver.java): de receiver: deze ontvangt messages met behulp van `@RabbitListener`. Deze maakt een auto-delete queue (`@Queue`) en verbindt die met de exchange.
 - [RabbitConfig.java](src/main/java/be/ucll/backend2/messaging/queue/RabbitConfig.java): de configuratie: definieert de exchange en registreert de `Jackson2JsonMessageConverter` bean, zodat berichten die via RabbitMQ gestuurd worden als JSON worden verstuurd en ontvangen.
-- [Application.java](src/main/java/be/ucll/backend2/messaging/queue/Application.java): een heel standaard Spring Boot main-klasse.
+- [Application.java](src/main/java/be/ucll/backend2/messaging/queue/Application.java): een standaard Spring Boot main-klasse, geannoteerd met `@EnableScheduling` om de `@Schedule` in `Sender` te laten werken.
 - [compose.yaml](compose.yaml): bevat de Docker Compose configuratie om een RabbitMQ broker op te starten.
 - [application.yaml](src/main/resources/application.yaml): stelt in hoe de applicatie moet verbinden met RabbitMQ.
