@@ -1,0 +1,19 @@
+meta {
+  name: Stream messages
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{host}}/api/v1/messages?stream
+  body: none
+  auth: inherit
+}
+
+params:query {
+  stream: 
+}
+
+settings {
+  encodeUrl: true
+}

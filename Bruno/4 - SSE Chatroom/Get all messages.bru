@@ -1,0 +1,15 @@
+meta {
+  name: Get all messages
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{host}}/api/v1/messages
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
