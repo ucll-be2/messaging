@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "5cc4f504-a283-466f-96e6-ff8641cb0a22",
+		"name": "Backend - Messaging",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30232115"
+	},
+	"item": [
+		{
+			"name": "3 - ServerSentEvents",
+			"item": [
+				{
+					"name": "Stream messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/messages?stream",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"messages"
+							],
+							"query": [
+								{
+									"key": "stream",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4 - SSE Chatroom",
+			"item": [
+				{
+					"name": "Get all messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/messages",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stream messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/messages?stream",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"messages"
+							],
+							"query": [
+								{
+									"key": "stream",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"Hello!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/messages",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "host2",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
